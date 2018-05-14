@@ -2,16 +2,14 @@
 package moneyDiary;
 
 import java.util.*;
-//cal()¸¦ µû·Î ¸¸µéÁö ¸»°í total()¾È¿¡ ³ª¸ÓÁö ¸Ş¼Òµåµµ ÀüºÎ ³Ö¾î¼­ cal()¸¦ µû·Î ¸¸µéÁö ¾Êµµ·ÏÇÏ±â
-//this()³ª super() »ç¿ëÇØº¸±â
 
 class calculate {
 
-	private int money = 400000;// ÇöÀç ³» ¼ÒÀ¯±İ¾×
+	private int money = 400000;// í˜„ì¬ ë‚´ ì†Œìœ ê¸ˆì•¡
 	int con = 1;
-	int expense_sum = 0;//ÁöÃâ¾×
-	int profit_sum = 0;//¼öÀÍ¾×
-	int present_money = 0;//ÃÑ
+	int expense_sum = 0;//ì§€ì¶œì•¡
+	int profit_sum = 0;//ìˆ˜ìµì•¡
+	int present_money = 0;//ì´
 	Scanner scan = new Scanner(System.in);
 	
 	public void run() {
@@ -25,19 +23,19 @@ class calculate {
 		return expense_sum - profit_sum;
 	}
 
-	public void date(int date) {// ³¯Â¥ ÀÔ·Â
-		System.out.println("<" + date + " ´ŞÀÇ °¡°èºÎ" + ">");
-		System.out.println("** Á¾·áÇÒ¶§´Â : -1 **");
+	public void date(int date) {// ë‚ ì§œ ì…ë ¥
+		System.out.println("<" + date + " ë‹¬ì˜ ê°€ê³„ë¶€" + ">");
+		System.out.println("** ì¢…ë£Œí• ë•ŒëŠ” : -1 **");
 		System.out.println("-------------------");
-		System.out.println(date + "´ŞÀÇ ÁöÃâ¾×");
+		System.out.println(date + "ë‹¬ì˜ ì§€ì¶œì•¡");
 	}
 	
-	// ÁöÃâ
+	// ì§€ì¶œ
 	public void expense_sum() {
 		con = 1;
 		for (int i = 0; i < 30; i++) {
 			System.out.print(con + ". : -");
-			int expense = scan.nextInt();// ÁöÃâ
+			int expense = scan.nextInt();// ì§€ì¶œ
 			con++;
 			if (expense == -1) {
 				break;
@@ -46,36 +44,36 @@ class calculate {
 			expense_sum += expense;
 		} // end of for
 
-		System.out.println("ÃÑ ÁöÃâ¾× : -" + expense_sum+"\n");
+		System.out.println("ì´ ì§€ì¶œì•¡ : -" + expense_sum+"\n");
 	}	
 	
-	// ¼öÀÍ
+	// ìˆ˜ìµ
 	public void profit_sum() {
 		con = 1;
 		for (int i = 0; i < 30; i++) {
 
 			System.out.print(con + ". : +");
-			int profit = scan.nextInt();// ÁöÃâ
+			int profit = scan.nextInt();// ì§€ì¶œ
 			con++;
 			if (profit == -1) {
 				break;
 			}
 			profit_sum += profit;
 		}
-		System.out.println("ÃÑ ¼öÀÍ¾× : +" + profit_sum);
+		System.out.println("ì´ ìˆ˜ìµì•¡ : +" + profit_sum);
 		System.out.println("---------------------");
 
 	}
 
 	public void total() {
 		if (expense_sum > profit_sum) {
-			System.out.println("ÃÑ ¼öÀÍ¾× : -" + expense_sum_profit_sum());
+			System.out.println("ì´ ìˆ˜ìµì•¡ : -" + expense_sum_profit_sum());
 			present_money = money - expense_sum_profit_sum();
 		} else {
-			System.out.println("ÃÑ ¼ÕÀÍ¾× : " +expense_sum_profit_sum());
+			System.out.println("ì´ ì†ìµì•¡ : " +expense_sum_profit_sum());
 			present_money = money + expense_sum_profit_sum();
 		}
-		System.out.println("ÇöÀç ³» ¼ÒÀ¯±İ¾× : " + present_money+"\n");
+		System.out.println("í˜„ì¬ ë‚´ ì†Œìœ ê¸ˆì•¡ : " + present_money+"\n");
 		
 	}
 
