@@ -1,4 +1,4 @@
-//2018.03.24
+
 package moneyDiary;
 
 import java.util.*;
